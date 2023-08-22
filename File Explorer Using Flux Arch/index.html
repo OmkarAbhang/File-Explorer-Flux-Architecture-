@@ -26,13 +26,14 @@
         </div>
 
         <div id="fileExplorer">
-            <div id="rootDiv" class="item">
+            <div id="rootFolderDiv" class="item">
                 <span id="rootArrowSpan" class="arrow">
                     <img
                         src="images/icons8-right-button-48.png"
                         alt="➡"
                         onclick="onClickToggle(this)"
                         id="rootChildrenImg"
+                        class="arrow"
                     />
                 </span>
                 <span
@@ -40,9 +41,9 @@
                     class="name"
                     onclick="expand()"
                     style="font-size: 25px"
-                    >Root</span
+                    >root</span
                 >
-                <!-- <span id="rootEdit">
+                <span id="rootEdit">
                     <img
                         src="images/icons8-edit-16.png"
                         alt="edit"
@@ -50,7 +51,7 @@
                         class="editBtn"
                         onclick="onClickEdit(this)"
                     />
-                </span> -->
+                </span>
                 <span id="rootFolder" class="folder">
                     <img
                         src="images/icons8-folder-480.png"
