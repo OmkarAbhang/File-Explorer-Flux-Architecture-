@@ -13,8 +13,8 @@ const Dispatcher = {
 const FileStore = {
     state: {
         level: 0,
-        id: "rootDiv",
-        name: "Root",
+        id: "rootFolderDiv",
+        name: "root",
         children: [],
         type: "folder",
     },
@@ -32,8 +32,10 @@ const FileStore = {
             deleteFolderOrFile(action);
         } else if (action.type === "toggle") {
             toggleBtn(action);
-        } else {
-            editItem(action);
+        } else if (action.type === "EditFolder") {
+            editFolder(action);
+        } else if (action.type === "EditFile") {
+            editFile(action);
         }
     },
 
@@ -81,12 +83,12 @@ function getDeleteType(event) {
 function getEditType(event) {
     if (event.id.includes("Folder")) {
         return {
-            type: "FolderEdit",
+            type: "EditFolder",
             event,
         };
     } else {
         return {
-            type: "FileEdit",
+            type: "EditFile",
             event,
         };
     }
