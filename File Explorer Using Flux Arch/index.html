@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="flux.js"></script>
+    <script src="utils.js"></script>
+    <script src="operation.js"></script>
+
+    <link rel="stylesheet" href="index.css" type="text/css" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>File Explorer</title>
+    </head>
+    <body>
+        <h1 id="MainHeadingTag">File Explorer</h1>
+
+        <div id="namingContainer">
+            <input
+                type="text"
+                maxlength="10"
+                placeholder="Name of File/Folder"
+                id="naming"
+            />
+            <button id="darkModeButton" onclick="toggleDarkMode()">
+                Light Mode
+            </button>
+        </div>
+
+        <div id="fileExplorer">
+            <div id="rootDiv" class="item">
+                <span id="rootArrowSpan" class="arrow">
+                    <img
+                        src="images/icons8-right-button-48.png"
+                        alt="➡"
+                        onclick="onClickToggle(this)"
+                        id="rootChildrenImg"
+                    />
+                </span>
+                <span
+                    id="root"
+                    class="name"
+                    onclick="expand()"
+                    style="font-size: 25px"
+                    >Root</span
+                >
+                <!-- <span id="rootEdit">
+                    <img
+                        src="images/icons8-edit-16.png"
+                        alt="edit"
+                        id="rootEditFolderBtn"
+                        class="editBtn"
+                        onclick="onClickEdit(this)"
+                    />
+                </span> -->
+                <span id="rootFolder" class="folder">
+                    <img
+                        src="images/icons8-folder-480.png"
+                        alt="📁"
+                        id="rootFolderBtn"
+                        class="folderBtn"
+                        onclick="onClickFolder(this)"
+                    />
+                </span>
+                <span id="rootFile" class="file">
+                    <img
+                        src="images/newFile.png"
+                        alt="📄"
+                        id="rootFileBtn"
+                        class="fileBtn"
+                        onclick="onClickFile(this)"
+                    />
+                </span>
+                <span id="rootDelete" class="delete">
+                    <img
+                        src="images/icons8-delete-24.png"
+                        alt="🗑"
+                        id="rootDeleteBtn"
+                        class="delete"
+                    />
+                </span>
+                <div id="rootDivChildren"></div>
+            </div>
+        </div>
+    </body>
+</html>
